@@ -1,0 +1,20 @@
+/**
+ * Application : BookStore
+ * Name        : mystyles.css
+ * Author      : rafaelbattesti
+ * Since       : 2016-06-15
+ * Version     : 0.1
+ */
+
+.copyright
+{
+    text-align: center;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+img.thumb
+{
+    width: 100%;
+    height: auto;
+}

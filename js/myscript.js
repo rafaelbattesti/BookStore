@@ -34,12 +34,31 @@ function buildHeader(title) {
     $("header>h1").html(title);
 }
 
+//Builds the home page menu
+function buildMenu(xml) {
+    var n = 1;
+    $(xml).find("book").each(function(){
+        $("#menu-" + n).html($(this).find("book>name").text());
+        n++;
+    });
+}
+
+function buildGrid(xml) {
+    var n = 1;
+    $(xml).find("book").each(function(){
+        $("#grid-" + n + ">img").attr("src", "img/" + $(this).find("book>name").attr("img"));
+        n++;
+    });
+}
+
 //Builds the home page footer
 function buildFooter(xml) {
     var stdNum = $(xml).find("student").attr("studentNumber");
     var stdProg = $(xml).find("student").attr("studentProgram");
-    $("footer>h2").html(stdNum);
-    $("footer>h4").html(stdProg);
+    var stdName = "&copy;" + $(xml).find("student").text();
+    $("#leftFooter>p").html(stdProg);
+    $("#centerFooter>p").html(stdName);
+    $("#rightFooter>p").html(stdNum);
 }
 
 //Build the home page
@@ -48,6 +67,8 @@ function buildHome(xml) {
     var title = setTitle(xml);
     buildHeader(title);
     buildFooter(xml);
+    buildMenu(xml);
+    buildGrid(xml);
 }
 
 

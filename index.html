@@ -14,9 +14,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Link Stylesheets -->
-    <link rel="stylesheet" href="css/themes/battesti.min.css" />
-    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="css/themes/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/themes/battesti.min.css"/>
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css"/>
+    <link rel="stylesheet" href="css/themes/jquery.mobile.structure-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/mystyles.css"/>
 
     <!-- Include Javascript libraries -->
     <script src="js/jquery-1.11.1.min.js"></script>
@@ -28,29 +29,76 @@
 <body>
 
 <!-- Home Page -->
-<div data-role="page" id="home" data-theme="a">
+<section data-role="page" id="home" data-theme="a">
 
     <!-- Header -->
     <header data-role="header">
+
+        <!-- icons -->
         <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home ui-btn-icon-notext">Home</a>
+        <a href="#menu" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-grid ui-btn-icon-notext">Menu</a>
+
+        <!-- Tag for title -->
         <h1></h1>
+
+        <!-- Navbar -->
+        <section data-role="navbar">
+            <ul>
+                <li><a href="#book" id="menu-1" class="ui-icon-carat-d ui-btn-icon-right">One</a></li>
+                <li><a href="#book" id="menu-2" class="ui-icon-carat-d ui-btn-icon-right">Two</a></li>
+                <li><a href="#book" id="menu-3" class="ui-icon-carat-d ui-btn-icon-right">Three</a></li>
+                <li><a href="#book" id="menu-4" class="ui-icon-carat-d ui-btn-icon-right">Four</a></li>
+            </ul>
+        </section>
+
     </header>
 
     <!-- Main content section -->
     <section class="ui-content" role="main">
+
+        <!-- Grid to show book covers -->
+        <section id="contentGrid" class="ui-grid-a">
+            <section id="grid-1" class="ui-block-a">
+                <img class="thumb"/>
+            </section>
+            <section id="grid-2" class="ui-block-b">
+                <img class="thumb"/>
+            </section>
+        </section>
+        <section class="ui-grid-a">
+            <section id="grid-3" class="ui-block-a">
+                <img class="thumb"/>
+            </section>
+            <section id="grid-4" class="ui-block-b">
+                <img class="thumb"/>
+            </section>
+        </section>
+
     </section>
 
     <!-- Footer -->
     <footer data-role="footer">
+        <section class="ui-grid-b">
+            <section id="leftFooter" class="ui-block-a">
+                <p class="copyright"></p>
+            </section>
+            <section id="centerFooter" class="ui-block-b">
+                <p class="copyright"></p>
+            </section>
+            <section id="rightFooter" class="ui-block-c">
+                <p class="copyright"></p>
+            </section>
+        </section>
     </footer>
 
-</div><!-- Home Page -->
+</section><!-- Home Page -->
 
 <!-- Book page -->
-<div data-role="page" id="book" data-theme="a">
+<section data-role="page" id="book" data-theme="a">
 
     <!-- Header -->
     <header data-role="header">
+        <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home ui-btn-icon-notext">Home</a>
     </header>
 
     <!-- Main content section -->
@@ -63,7 +111,7 @@
         <h4></h4>
     </footer>
 
-</div><!-- Book Page -->
+</section><!-- Book Page -->
 
 </body>
 </html>
