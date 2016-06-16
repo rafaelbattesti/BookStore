@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<battesti>
+    <title>Books you must read before you die!</title>
+    <theme url="http://themeroller.jquerymobile.com/?ver=1.4.5&amp;style_id=20160615-35">Warm Reader</theme>
+    <student studentNumber="991382266" studentProgram="Systems Analyst">Rafael Battesti</student>
+    <book>
+        <name img="one_hundred_years_of_solitude.jpg">One Hundred Years of Solitude</name>
+        <description type="Modern Classic">An acknowledged masterpiece, this is the story of seven generations of the Buendia family and of Macondo, the town they have built. Though little more than a settlement surrounded by mountains, Macondo has its wars and disasters, even its wonders and miracles. A microcosm of Columbian life, its secrets lie hidden, encoded in a book and only Aureliano Buendia can fathom its mysteries and reveal its shrouded destiny. Blending political reality with magic realism, fantasy with comic invention, "One Hundred Years of Solitude" is one of the most daringly original works of the twentieth century.</description>
+        <author>Gabriel García Marquez</author>
+        <publisher>Penguin Books Ltd</publisher>
+        <price>14.56</price>
+    </book>
+    <book>
+        <name img="pride_and_prejudice.jpg">Pride and Prejudice</name>
+        <description type="Classic">This is the "Penguin English Library Edition" of "Pride and Prejudice" by Jane Austen. 'No sooner had he made it clear to himself and his friends that she had hardly a good feature in her face, than he began to find it was rendered uncommonly intelligent by the beautiful expression of her dark eyes...' When Elizabeth Bennet first meets eligible bachelor Fitzwilliam Darcy, she thinks him arrogant and conceited; he is indifferent to her good looks and lively mind. When she later discovers that Darcy has involved himself in the troubled relationship between his friend Bingley and her beloved sister Jane, she is determined to dislike him more than ever. In the sparkling comedy of manners that follows, Jane Austen shows the folly of judging by first impressions and superbly evokes the friendships, gossip and snobberies of provincial middle-class life. "The Penguin English Library" - 100 editions of the best fiction in English, from the eighteenth century and the very first novels to the beginning of the First World War.</description>
+        <author>Jane Austen</author>
+        <publisher>Penguin Books Ltd</publisher>
+        <price>11.99</price>
+    </book>
+    <book>
+        <name img="the_picture_of_dorian_gray.jpg">The Picture of Dorian Gray</name>
+        <description type="Contemporary Fiction">Part of "Penguin's" beautiful hardback "Clothbound Classics" series, designed by the award-winning Coralie Bickford-Smith, these delectable and collectible editions are bound in high-quality colourful, tactile cloth with foil stamped into the design. Enthralled by his own exquisite portrait, Dorian Gray exchanges his soul for eternal youth and beauty. Influenced by his friend Lord Henry Wotton, he is drawn into a corrupt double life; indulging his desires in secret while remaining a gentleman in the eyes of polite society. Only his portrait bears the traces of his decadence. The novel was a succes de scandale and the book was later used as evidence against "Wilde at the Old Bailey" in 1895. It has lost none of its power to fascinate and disturb.</description>
+        <author>Oscar Wilde</author>
+        <publisher>Penguin Books Ltd</publisher>
+        <price>18.13</price>
+    </book>
+    <book>
+        <name img="">Richard Marquand</name>
+        <description type="Literary Studies/Short Stories">'I regret to see that my book has turned out un fiasco solenne' James Joyce's disillusion with the publication of Dubliners in 1914 was the result of ten years battling with publishers, resisting their demands to remove swear words, real place names and much else, including two entire stories. Although only 24 when he signed his first publishing contract for the book, Joyce already knew its worth: to alter it in any way would 'retard the course of civilisation in Ireland'. Joyce's aim was to tell the truth - to create a work of art that would reflect life in Ireland at the turn of the last century and by rejecting euphemism, reveal to the Irish the unromantic reality the recognition of which would lead to the spiritual liberation of the country. Each of the fifteen stories offers a glimpse of the lives of ordinary Dubliners - a death, an encounter, an opportunity not taken, a memory rekindled - and collectively they paint a portrait of a nation. ABOUT THE SERIES: For over 100 years Oxford World's Classics has made available the widest range of literature from around the globe. Each affordable volume reflects Oxford's commitment to scholarship, providing the most accurate text plus a wealth of other valuable features, including expert introductions by leading authorities, helpful notes to clarify the text, up-to-date bibliographies for further study, and much more.</description>
+        <author>James Joyce</author>
+        <publisher>Oxford University Press</publisher>
+        <price>9.84</price>
+    </book>
+</battesti>
