@@ -1,9 +1,12 @@
 <!--
- Author : Rafael Battesti
- Since  : 2016-06-10
+ Application : BookStore
+ File        : index.html
+ Author      : Rafael Battesti
+ Since       : 2016-06-15
  -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html class="ui-mobile" lang="en">
 <head>
     <meta charset="UTF-8">
 
@@ -11,15 +14,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Link Stylesheets -->
-    <link rel="stylesheet" href="css/jquery.mobile.css"/>
-    <link rel="stylesheet" href="css/mystyles.css"/>
+    <link rel="stylesheet" href="css/battesti.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css"/>
 
     <!-- Include Javascript libraries-->
     <script src="js/jquery.js"></script>
     <script src="js/jquery.mobile.js"></script>
     <script src="js/myscript.js"></script>
 
-    <title>Exercise 2 - JQuery Mobile</title>
+    <title>Books, Books, Books!</title>
 </head>
 <body>
 
@@ -27,38 +30,39 @@
 <div data-role="page" id="home" data-theme="a">
 
     <!-- Header -->
-    <header data-role="header" id="header">
+    <header data-role="header">
+        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">Home</a>
+        <h1></h1>
     </header>
 
     <!-- Main content section -->
     <section class="ui-content" role="main">
-
-        <!-- Filter -->
-        <section id="filter">
-
-        </section>
-
-        <!-- Collapsible -->
-        <section id="accordeon" data-role="collapsible-set" data-content-theme="d">
-
-        </section>
-
-        <!-- Grid -->
-        <section id="grid" class="ui-grid-b">
-            <div class="ui-block-a"><div id="blockA" class="ui-bar ui-bar-a" style="height:60px"></div></div>
-            <div class="ui-block-b"><div id="blockB" class="ui-bar ui-bar-a" style="height:60px"></div></div>
-            <div class="ui-block-c"><div id="blockC" class="ui-bar ui-bar-a" style="height:60px"></div></div>
-        </section>
-
-
-
-    </section> <!-- Main content section -->
+    </section>
 
     <!-- Footer -->
-    <footer data-role="footer" id="footer">
+    <footer data-role="footer">
     </footer>
 
 </div><!-- Home Page -->
+
+<!-- Book page -->
+<div data-role="page" id="book" data-theme="a">
+
+    <!-- Header -->
+    <header data-role="header">
+    </header>
+
+    <!-- Main content section -->
+    <section class="ui-content">
+    </section>
+
+    <!-- Footer -->
+    <footer data-role="footer">
+        <h2></h2>
+        <h4></h4>
+    </footer>
+
+</div><!-- Book Page -->
 
 </body>
 </html>
