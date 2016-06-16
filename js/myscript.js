@@ -26,12 +26,12 @@ function showErr(e) {
 function setTitle(xml) {
     var title = $(xml).find("title").text();
     $("title").html(title);
+    return title;
 }
 
 //Builds the home page header
-function buildHeader(xml) {
-    var header = $(xml).find("student").text();
-    $("header>h1").html(header);
+function buildHeader(title) {
+    $("header>h1").html(title);
 }
 
 //Builds the home page footer
@@ -45,8 +45,8 @@ function buildFooter(xml) {
 //Build the home page
 function buildHome(xml) {
     data = xml;
-    setTitle(xml);
-    buildHeader(xml);
+    var title = setTitle(xml);
+    buildHeader(title);
     buildFooter(xml);
 }
 
