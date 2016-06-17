@@ -111,6 +111,7 @@ $(document).on("pagecreate", "#home", function(){
 //pagebeforeshow event to trigger book page behavior
 $(document).on("pagebeforeshow", "#book", function(){
     buildHeader($(data).find("book:nth(" + menuId + ")>name").text(), "#bookHeader");
+    window.scrollTo(0,1);
 });
 
 //pagebeforeshow event to trigger popup page
