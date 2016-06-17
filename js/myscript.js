@@ -30,47 +30,68 @@ function setTitle(xml) {
 }
 
 //Builds the home page header
-function buildHeader(title) {
-    $("header>h1").html(title);
+function buildHeader(title, id) {
+    $(id + ">h1").html(title);
 }
 
 //Builds the home page menu
 function buildMenu(xml) {
-    var n = 1;
+    var n = 0;
     $(xml).find("book").each(function(){
         $("#menu-" + n).html($(this).find("book>name").text());
         n++;
     });
 }
 
-function buildGrid(xml) {
-    var n = 1;
+function buildList(xml) {
+    var n = 0;
+    var imgElem;
     $(xml).find("book").each(function(){
-        $("#grid-" + n + ">img").attr("src", "img/" + $(this).find("book>name").attr("img"));
+        var image = $(this).find("book>name").attr("img");
+        imgElem = $("#img-" + n)
+        imgElem.append(
+             "<img src='img/" + image + "' class='ui-li-thumb'/>" +
+                 "<h2 class='ui-li-heading'>" + $(this).find("book>name").text() + "</h2>"  +
+                    "<p class='ui-li-desc'>" + $(this).find("book>author").text() + "</p>"
+        )
         n++;
     });
+    $("#mainList").listview("refresh");
+
 }
 
 //Builds the home page footer
 function buildFooter(xml) {
     var stdNum = $(xml).find("student").attr("studentNumber");
     var stdProg = $(xml).find("student").attr("studentProgram");
-    var stdName = "&copy;" + $(xml).find("student").text();
-    $("#leftFooter>p").html(stdProg);
-    $("#centerFooter>p").html(stdName);
-    $("#rightFooter>p").html(stdNum);
+    var stdName = "&copy; " + $(xml).find("student").text();
+    $(".ui-block-a>p").html(stdProg);
+    $(".ui-block-b>p").html(stdName);
+    $(".ui-block-c>p").html(stdNum);
 }
 
 //Build the home page
 function buildHome(xml) {
     data = xml;
     var title = setTitle(xml);
-    buildHeader(title);
+    buildHeader(title, "#homeHeader");
     buildFooter(xml);
     buildMenu(xml);
-    buildGrid(xml);
+    buildList(xml);
 }
 
+//Build the popup
+function buildPopup(xml) {
+    var pop = $("#popupGo");
+    $("#popupContent").html($(xml).find("theme>description").text());
+    pop.html($(xml).find("theme>goButton").text());
+    pop.attr("href", $(xml).find("theme>link").text());
+    pop.attr("target", "blank");
+}
+
+function parseXML(xml, menuId) {
+    //TODO: Parse the XML to produce the book individual page. Call on pagebeforeshow for #book
+}
 
 /*************************************************************************************************************
  * EVENTS                                                                                                    *
@@ -85,4 +106,47 @@ $(document).on("pagecreate", "#home", function(){
         success  : buildHome,
         error    : showErr
     });
+});
+
+//pagebeforeshow event to trigger book page behavior
+$(document).on("pagebeforeshow", "#book", function(){
+    buildHeader($(data).find("book:nth(" + menuId + ")>name").text(), "#bookHeader");
+});
+
+//pagebeforeshow event to trigger popup page
+$(document).on("pagebeforeshow", "#popup", function(){
+    buildHeader($(data).find("theme>name").text(), "#popupHeader");
+    buildPopup(data);
+});
+
+$(document).on("click", "#menu-0", function(){
+    menuId = 0;
+});
+
+$(document).on("click", "#menu-1", function(){
+    menuId = 1;
+});
+
+$(document).on("click", "#menu-2", function(){
+    menuId = 2;
+});
+
+$(document).on("click", "#menu-3", function(){
+    menuId = 3;
+});
+
+$(document).on("click", "#img-0", function(){
+    menuId = 0;
+});
+
+$(document).on("click", "#img-1", function(){
+    menuId = 1;
+});
+
+$(document).on("click", "#img-2", function(){
+    menuId = 2;
+});
+
+$(document).on("click", "#img-3", function(){
+    menuId = 3;
 });

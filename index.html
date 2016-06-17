@@ -24,7 +24,7 @@
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/myscript.js"></script>
     
-    <title>Books, Books, Books!</title>
+    <title>Book Star</title>
 </head>
 <body>
 
@@ -32,22 +32,22 @@
 <section data-role="page" id="home" data-theme="a">
 
     <!-- Header -->
-    <header data-role="header">
+    <header data-role="header" id="homeHeader" data-position="fixed">
 
-        <!-- icons -->
+        <!-- Icon to home page -->
         <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home ui-btn-icon-notext">Home</a>
-        <a href="#menu" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-grid ui-btn-icon-notext">Menu</a>
+        <a href="#popup" data-rel="dialog" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-info ui-btn-icon-notext">Awesome Theme</a>
 
         <!-- Tag for title -->
         <h1></h1>
 
         <!-- Navbar -->
-        <section data-role="navbar">
+        <section data-role="navbar" data-inset="true">
             <ul>
-                <li><a href="#book" id="menu-1" class="ui-icon-carat-d ui-btn-icon-right">One</a></li>
-                <li><a href="#book" id="menu-2" class="ui-icon-carat-d ui-btn-icon-right">Two</a></li>
-                <li><a href="#book" id="menu-3" class="ui-icon-carat-d ui-btn-icon-right">Three</a></li>
-                <li><a href="#book" id="menu-4" class="ui-icon-carat-d ui-btn-icon-right">Four</a></li>
+                <li><a href="#book" id="menu-0" class="ui-icon-star ui-btn-icon-top"></a></li>
+                <li><a href="#book" id="menu-1" class="ui-icon-star ui-btn-icon-top"></a></li>
+                <li><a href="#book" id="menu-2" class="ui-icon-star ui-btn-icon-top"></a></li>
+                <li><a href="#book" id="menu-3" class="ui-icon-star ui-btn-icon-top"></a></li>
             </ul>
         </section>
 
@@ -56,36 +56,33 @@
     <!-- Main content section -->
     <section class="ui-content" role="main">
 
-        <!-- Grid to show book covers -->
-        <section id="contentGrid" class="ui-grid-a">
-            <section id="grid-1" class="ui-block-a">
-                <img class="thumb"/>
-            </section>
-            <section id="grid-2" class="ui-block-b">
-                <img class="thumb"/>
-            </section>
-        </section>
-        <section class="ui-grid-a">
-            <section id="grid-3" class="ui-block-a">
-                <img class="thumb"/>
-            </section>
-            <section id="grid-4" class="ui-block-b">
-                <img class="thumb"/>
-            </section>
-        </section>
-
+        <!-- List to show book links -->
+        <ul data-role="listview"  data-inset="true" id="mainList">
+            <li data-inset="true">
+                <a id="img-0" href="#book"></a>
+            </li>
+            <li data-inset="true">
+                <a id="img-1" href="#book"></a>
+            </li>
+            <li data-inset="true">
+                <a id="img-2" href="#book"></a>
+            </li>
+            <li data-inset="true">
+                <a id="img-3" href="#book"></a>
+            </li>
+        </ul>
     </section>
 
     <!-- Footer -->
-    <footer data-role="footer">
+    <footer data-role="footer" data-position="fixed">
         <section class="ui-grid-b">
-            <section id="leftFooter" class="ui-block-a">
+            <section class="ui-block-a">
                 <p class="copyright"></p>
             </section>
-            <section id="centerFooter" class="ui-block-b">
+            <section class="ui-block-b">
                 <p class="copyright"></p>
             </section>
-            <section id="rightFooter" class="ui-block-c">
+            <section class="ui-block-c">
                 <p class="copyright"></p>
             </section>
         </section>
@@ -94,24 +91,55 @@
 </section><!-- Home Page -->
 
 <!-- Book page -->
-<section data-role="page" id="book" data-theme="a">
+<section data-role="page" id="book" data-theme="a" data-position="fixed">
 
     <!-- Header -->
-    <header data-role="header">
+    <header data-role="header" id="bookHeader">
         <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home ui-btn-icon-notext">Home</a>
+        <h1></h1>
     </header>
 
     <!-- Main content section -->
-    <section class="ui-content">
+    <section class="ui-content" id="bookContent">
     </section>
 
     <!-- Footer -->
-    <footer data-role="footer">
-        <h2></h2>
-        <h4></h4>
+    <footer data-role="footer" data-position="fixed">
+        <section class="ui-grid-b">
+            <section class="ui-block-a">
+                <p class="copyright"></p>
+            </section>
+            <section class="ui-block-b">
+                <p class="copyright"></p>
+            </section>
+            <section class="ui-block-c">
+                <p class="copyright"></p>
+            </section>
+        </section>
     </footer>
 
 </section><!-- Book Page -->
+
+<!-- Start of #popup -->
+<div data-role="page" id="popup">
+
+    <header id="popupHeader" data-role="header" data-theme="a">
+        <h1></h1>
+    </header><!-- /header -->
+
+    <section class="ui-content" role="main" data-theme="a">
+        <h2></h2>
+        <p id="popupContent"></p>
+        <section class="ui-grid-a">
+            <section class="ui-block-a">
+                <a id="popupBack" href="#home" data-role="button" data-icon="back" data-inline="true" data-theme="a" data-iconpos="left">Back to home</a>
+            </section>
+            <section class="ui-block-b">
+                <a id="popupGo" data-role="button" data-icon="forward" data-inline="true" data-theme="a" data-iconpos="right"></a>
+            </section>
+        </section>
+    </section>
+</div>
 
 </body>
 </html>
