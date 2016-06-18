@@ -46,3 +46,29 @@
 {
     float: right;
 }
+
+.imgDetail
+{
+    margin: 0 auto;
+    height: 150px !important;
+    width: auto !important;
+    text-align: center !important;
+    display: block !important;
+}
+
+#bookThumb
+{
+    padding-right: 5%;
+}
+
+#bookInfo
+{
+    margin-top: -10px;
+}
+
+p.content
+{
+    height: 50px;
+    font-size: small;
+    overflow: scroll;
+}

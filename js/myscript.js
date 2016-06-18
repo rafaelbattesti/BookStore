@@ -89,8 +89,37 @@ function buildPopup(xml) {
     pop.attr("target", "blank");
 }
 
+//function build popup2
+function buildPopup2(xml, menuId) {
+    var book = $(xml).find("book:nth(" + menuId + ")");
+    $("#popupContent2").html(book.find("review").text());
+}
+
 function parseXML(xml, menuId) {
-    //TODO: Parse the XML to produce the book individual page. Call on pagebeforeshow for #book
+    var container = $("#bookContent");
+    var book = $(xml).find("book:nth(" + menuId + ")");
+    var nameNode = book.find("name");
+    var amazonNode = book.find("amazonSearch");
+    var img = nameNode.attr("img");
+    var descNode = book.find("description");
+    var authorNode = book.find("author");
+    var price = book.find("price").text();
+    var publisher = book.find("publisher").text();
+
+
+    container.find(".ui-block-a").html(
+        "<img class='imgDetail' src='img/" + img + "'/>" +
+            "<a href='" + amazonNode.text() + "'data-role='button' data-theme='a' class='ui-link ui-btn ui-btn-a ui-icon-shop ui-btn-icon-right ui-shadow ui-corner-all' target='blank'>Amazon</a>" +
+            "<a href='http://indigo.ca' data-role='button' data-theme='a' class='ui-link ui-btn ui-btn-a ui-icon-forward ui-btn-icon-right ui-shadow ui-corner-all' target='blank'>indigo.ca</a>"
+    );
+
+    container.find(".ui-block-b").html(
+        "<h3>" + nameNode.text() + " - " + descNode.attr("type") + "</h3>" +
+            "<h4><a href='" + authorNode.attr("url") + "' target='blank'>" + authorNode.text() + "</a></h4>" +
+            "<p> CAD $" + price + " - " + publisher + "</p>" +
+                "<p class='content'>" + descNode.text() + "</p>"+
+        "<a href='#popup2' data-rel='dialog' data-role='button' data-theme='a' data-transition='pop' class='ui-link ui-btn ui-btn-a ui-icon-info ui-btn-icon-right ui-shadow ui-corner-all'>Reviews</a>"
+    );
 }
 
 /*************************************************************************************************************
@@ -111,13 +140,18 @@ $(document).on("pagecreate", "#home", function(){
 //pagebeforeshow event to trigger book page behavior
 $(document).on("pagebeforeshow", "#book", function(){
     buildHeader($(data).find("book:nth(" + menuId + ")>name").text(), "#bookHeader");
-    window.scrollTo(0,1);
+    parseXML(data, menuId);
 });
 
 //pagebeforeshow event to trigger popup page
 $(document).on("pagebeforeshow", "#popup", function(){
     buildHeader($(data).find("theme>name").text(), "#popupHeader");
     buildPopup(data);
+});
+
+//pagebeforeshow event to trigger popup page
+$(document).on("pagebeforeshow", "#popup2", function(){
+    buildPopup2(data, menuId);
 });
 
 $(document).on("click", "#menu-0", function(){

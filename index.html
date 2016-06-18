@@ -42,7 +42,7 @@
         <h1></h1>
 
         <!-- Navbar -->
-        <section data-role="navbar" data-inset="true">
+        <section id="topNav" data-role="navbar" data-inset="true">
             <ul>
                 <li><a href="#book" id="menu-0" class="ui-icon-star ui-btn-icon-top"></a></li>
                 <li><a href="#book" id="menu-1" class="ui-icon-star ui-btn-icon-top"></a></li>
@@ -91,16 +91,29 @@
 </section><!-- Home Page -->
 
 <!-- Book page -->
-<section data-role="page" id="book" data-theme="a" data-position="fixed">
+<section data-role="page" id="book" data-theme="a">
+
+    <!-- Panel -->
+    <section data-role="panel" id="panelBookDesc">
+
+    </section>
 
     <!-- Header -->
-    <header data-role="header" id="bookHeader">
+    <header data-role="header" id="bookHeader" data-position="fixed">
         <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home ui-btn-icon-notext">Home</a>
         <h1></h1>
     </header>
 
     <!-- Main content section -->
     <section class="ui-content" id="bookContent">
+        <section class="ui-grid-a ui-responsive">
+            <section id="bookThumb" class="ui-block-a">
+
+            </section>
+            <section id="bookInfo" class="ui-block-b">
+
+            </section>
+        </section>
     </section>
 
     <!-- Footer -->
@@ -132,12 +145,25 @@
         <p id="popupContent"></p>
         <section class="ui-grid-a">
             <section class="ui-block-a">
-                <a id="popupBack" href="#home" data-role="button" data-icon="back" data-inline="true" data-theme="a" data-iconpos="left">Back</a>
+                <a id="popupBack" href="#home" data-role="button" data-icon="back" data-inline="true" data-theme="a" data-iconpos="left">Home</a>
             </section>
             <section class="ui-block-b">
                 <a id="popupGo" data-role="button" data-icon="forward" data-inline="true" data-theme="a" data-iconpos="right"></a>
             </section>
         </section>
+    </section>
+</div>
+
+<!-- Review #popup2 -->
+<div data-role="page" id="popup2">
+
+    <header id="popupHeader2" data-role="header" data-theme="a">
+        <h1>Reviews</h1>
+    </header><!-- /header -->
+
+    <section class="ui-content" role="main" data-theme="a">
+        <p id="popupContent2"></p>
+        <a id="popupBack2" href="#home" data-role="button" data-rel="back" data-icon="back" data-theme="a">Back</a>
     </section>
 </div>
 
